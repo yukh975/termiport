@@ -6,6 +6,35 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.23.29
+
+### Added
+
+- License revocation list. The vendor adds revoked licenses to a signed list (`termiport-license revoke`), the developer's server serves it, and the app, after each update check, passes it to its sync server, which revokes every license on it, also from a list older than the one it keeps, and revokes the licenses of the kept list again at start. A server never connects anywhere for the list itself; the admin can also install it with `license revocations install FILE`, and `license revoked` shows the installed list.
+
+### Changed
+
+- Update notes are signed separately from the archive. The app shows the notes of an update only when their signature verifies; an update whose notes are not signed is offered without them.
+
+### Fixed
+
+- Cancel or Esc on the connect card of a tab that was connected before, and locking the vault while such a tab reconnects, stop the attempt and keep the tab with its output, under the Disconnected bar; before, the tab closed. A tab that never connected still closes.
+- An address typed in the Hosts search can be connected even when it is part of a saved host's address (`10.0.0.1` with `10.0.0.10` saved): text with `.`, `:` or `@` gets a quick-connect row below the matching hosts unless it is exactly a saved host's name or address.
+- A session that ended with an exit status is shown as ended, not as a dropped connection, also when the server closes the connection without closing the channel, and a session closed without an error is shown as closed; neither reconnects.
+- When the server breaks the connection during sign-in (for example, after too many authentication failures), the tab reports a sign-in error and does not reconnect.
+- Saving a backup writes a new file and puts it in place of the old one only once it is complete; before, a failed write (full disk, removed drive) could leave neither copy.
+- A damaged Termius database no longer crashes the app during import; the import reports an error.
+- Erase All also removes Secure Enclave keys that have no key record left; before, the app kept offering to restore them.
+- Closing the Termius import, SSH import or backup dialog drops what it read (Termius passwords and keys, backup contents) at once, and Termius passwords and private keys are zeroed when freed; before, they stayed in memory until the vault was locked or the next scan.
+- Adding a device with the sync password has its own limit of five tries a day, and a correct password does not count; before, it used up the tries of the recovery code even when the password was right. When the tries run out, the app falls back to approval from another device, as for a wrong password.
+- The account's address gets a letter when a device joins with the sync password, and one for every device removed because a new device took its place on the same Mac after approval or recovery; before, both happened without a letter.
+- With PostgreSQL, the server gives up on connecting to the database after 5 seconds unless `connect_timeout` is set, and a request that waits more than 10 seconds for a free connection fails instead of waiting forever.
+- With PostgreSQL, a connection whose request was dropped while waiting for its turn to write is closed instead of going back to the pool, where the next request would have waited behind it.
+- PostgreSQL errors in the server log leave out the error detail, which can hold values from the rows; the code, message, table and constraint stay.
+- `import-sqlite` no longer writes to the SQLite file: it reads it as one snapshot and refuses a file from another version instead of bringing it up to date.
+- The server writes update descriptions and the revocation list through a temporary file of its own and flushes the directory after the rename; before, two writers at once shared one temporary file, and a power loss right after a write could lose it.
+- Making a backup no longer leaves pieces of the unencrypted contents in freed memory while the buffer grows.
+
 ## 26.10.23.28
 
 ### Changed
