@@ -34,14 +34,15 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 - Sync is optional. Records leave the Mac encrypted with a key that only
   your devices hold; the server never sees hostnames, usernames, keys or
   device names.
-- A new device is approved from one that is already connected. A recovery
-  code, shown once when the account is created, lets a device in when no
-  other is left.
+- A new device needs only the account password and the second factor, if
+  it is on (an authenticator app or a FIDO2 key), and syncs at once.
+- A recovery code is shown once when the account is created. Keep it for
+  emergencies.
 
 ## Licenses
 
-- Sync is free for up to 3 active devices per account. Devices waiting for
-  approval and revoked ones do not count.
+- Sync is free for up to 3 active devices per account. Revoked devices do
+  not count.
 - A license raises the device limit. It belongs to the account's email, not
   to a server, and works on any TermiPort server.
 - Install it in **Settings ▸ License ▸ Install License…**.
