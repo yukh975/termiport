@@ -13,6 +13,8 @@ Get the latest version from [Releases](../../releases/latest):
 - `TermiPort_VERSION_aarch64.dmg` — Apple silicon (M1 and later)
 - `TermiPort_VERSION_x64.dmg` — Intel
 
+What changed in each version: [CHANGELOG](CHANGELOG.md).
+
 Open the .dmg and drag TermiPort to Applications. The app is not notarized
 by Apple, so the first launch needs a one-time override: open TermiPort,
 then System Settings ▸ Privacy & Security ▸ Open Anyway.
