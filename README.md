@@ -21,7 +21,7 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 
 ## Features
 
-- SSH: hosts, groups, keys, jump hosts, known hosts
+- SSH: hosts, groups, keys, jump hosts, known hosts, automatic reconnect
 - Keys: file keys, Secure Enclave keys with Touch ID, FIDO2 security keys
 - Agent forwarding through a built-in agent
 - Port forwarding: local, remote, dynamic (SOCKS)
