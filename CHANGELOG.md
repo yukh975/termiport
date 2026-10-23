@@ -6,6 +6,36 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.23.25
+
+### Added
+
+- Perpetual licenses: `termiport-license issue --perpetual` instead of
+  `--until` issues a license that never expires. The app shows it as
+  valid with no end date, `license show` and `license list` on the server
+  as perpetual.
+- Revoking a license on the server: `license revoke EMAIL|ID` removes the
+  license from its account and refuses to install it again;
+  `license revoked` lists the revoked licenses. `license remove` still
+  only takes a license off an account.
+- The About window shows the account's license: who it is issued to and
+  until when, or the free plan.
+- The server can keep its data in PostgreSQL: `[database] postgres` in
+  the config (or `TERMIPORT_SERVER_DATABASE_POSTGRES`) takes a connection
+  string, and the server creates and migrates its tables there. Empty
+  keeps SQLite in `server.db`. `server.key` stays in the data directory
+  with either. `[database] password_file` reads the password from a file,
+  like `smtp.password_file`.
+- `termiport-server import-sqlite [FILE]` copies an SQLite database into
+  an empty PostgreSQL one in a single transaction; devices keep their
+  tokens.
+
+### Changed
+
+- `termiport-server backup` refuses with PostgreSQL: back up with
+  `pg_dump` and copy `server.key`.
+- The systemd unit starts after `postgresql.service`.
+
 ## 26.10.23.24
 
 ### Changed
