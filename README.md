@@ -37,7 +37,17 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 - A new device is approved from one that is already connected. A recovery
   code, shown once when the account is created, lets a device in when no
   other is left.
-- An account syncs up to 2 devices for free; a license raises the limit.
+
+## Licenses
+
+- Sync is free for up to 3 active devices per account. Devices waiting for
+  approval and revoked ones do not count.
+- A license raises the device limit. It belongs to the account's email, not
+  to a server, and works on any TermiPort server.
+- Install it in **Settings ▸ License ▸ Install License…**.
+- An expired license keeps working for 14 days. After that the free limit
+  applies again: the account's oldest devices keep full sync, the others
+  become read-only. Nothing is deleted.
 
 ## Updates
 
