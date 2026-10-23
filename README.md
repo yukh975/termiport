@@ -54,7 +54,7 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 
 TermiPort checks for a newer version at launch and on **TermiPort ▸ Check
 for Updates…**, shows what changed and installs only updates signed by the
-developer. Sync does not have to be set up for that.
+developer.
 
 ---
 
