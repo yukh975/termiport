@@ -13,6 +13,8 @@
 - `TermiPort_VERSION_aarch64.dmg` — Apple silicon (M1 и новее)
 - `TermiPort_VERSION_x64.dmg` — Intel
 
+Что изменилось в каждой версии — [CHANGELOG](CHANGELOG.ru.md).
+
 Откройте .dmg и перетащите TermiPort в «Программы». Приложение не
 нотаризовано Apple, поэтому первый запуск надо разрешить один раз: откройте
 TermiPort, затем Системные настройки ▸ Конфиденциальность и безопасность ▸
