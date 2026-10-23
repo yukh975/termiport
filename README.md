@@ -48,9 +48,10 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 - A license raises the device limit. It belongs to the account's email, not
   to a server, and works on any TermiPort server.
 - Install it in **Settings ▸ License ▸ Install License…**.
-- An expired license keeps working for 14 days. After that the free limit
-  applies again: the account's oldest devices keep full sync, the others
-  become read-only. Nothing is deleted.
+- A license is valid until its end date or perpetual. An expired license
+  keeps working for 14 days. After that the free limit applies again: the
+  account's oldest devices keep full sync, the others become read-only.
+  Nothing is deleted.
 
 ## Updates
 
