@@ -1,0 +1,50 @@
+# TermiPort
+
+Terminal and SSH client for macOS with end-to-end encrypted sync.
+
+Requires macOS 13.3 or later, Apple silicon or Intel.
+
+🇷🇺 [Версия на русском](README.ru.md)
+
+## Download
+
+Get the latest version from [Releases](../../releases/latest):
+
+- `TermiPort_VERSION_aarch64.dmg` — Apple silicon (M1 and later)
+- `TermiPort_VERSION_x64.dmg` — Intel
+
+Open the .dmg and drag TermiPort to Applications. The app is not notarized
+by Apple, so the first launch needs a one-time override: open TermiPort,
+then System Settings ▸ Privacy & Security ▸ Open Anyway.
+
+## Features
+
+- SSH: hosts, groups, keys, jump hosts, known hosts
+- Keys: file keys, Secure Enclave keys with Touch ID, FIDO2 security keys
+- Agent forwarding through a built-in agent
+- Port forwarding: local, remote, dynamic (SOCKS)
+- SFTP
+- Local terminal (the Mac's own shell) and serial connections
+- End-to-end encrypted sync
+
+## Security and sync
+
+- Everything is kept in a local vault encrypted with your master password;
+  it can also be unlocked with Touch ID on that Mac.
+- Sync is optional. Records leave the Mac encrypted with a key that only
+  your devices hold; the server never sees hostnames, usernames, keys or
+  device names.
+- A new device is approved from one that is already connected. A recovery
+  code, shown once when the account is created, lets a device in when no
+  other is left.
+- An account syncs up to 2 devices for free; a license raises the limit.
+
+## Updates
+
+TermiPort checks for a newer version at launch and on **TermiPort ▸ Check
+for Updates…**, shows what changed and installs only updates signed by the
+developer. Sync does not have to be set up for that.
+
+---
+
+© 2026 Yuriy Khachaturian. All rights reserved.
