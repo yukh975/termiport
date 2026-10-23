@@ -6,6 +6,19 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.23.26
+
+### Added
+
+- Settings ▸ General ▸ "Close the tab when its session ends without an error". Off by default.
+
+### Changed
+
+- When the session in a tab ends (the shell exits, the connection drops), the tab stays open with its scrollback: the terminal shows "[session closed]", and the bar at the bottom offers Close and Reconnect. A program cut off while it held the whole screen (an editor, `top`) no longer hides the scrollback. Before, the tab closed when the shell exited without an error; the new setting brings that back.
+- Pressing ⌘W again in the Close “…”? dialog closes the tab, as ⌘Q does in Quit TermiPort?. The second press counts only half a second after the dialog opens.
+- Clicking Synced at the bottom of the sidebar syncs at once and shows Syncing until it ends; before, it opened Settings ▸ Sync. Sync Needs Attention still opens Settings. While sync is off the sidebar shows Not syncing, which opens Settings ▸ Sync to set it up.
+- The first tab no longer sits right against the window buttons.
+
 ## 26.10.23.25
 
 ### Added
