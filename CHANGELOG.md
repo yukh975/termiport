@@ -6,6 +6,12 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.23.28
+
+### Changed
+
+- The Server address field of sync setup comes filled in with the TermiPort sync server; another address can be typed over it.
+
 ## 26.10.23.27
 
 ### Added
