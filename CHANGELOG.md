@@ -6,6 +6,23 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.23.27
+
+### Added
+
+- Host and group setting Reconnect: when the session in a tab drops, the tab connects again after the set pause (1–3600 s, 10 by default) and keeps trying while the error is one a retry may fix (the network, a timeout, a jump host). The bar shows the countdown with Reconnect Now and Cancel. Off unless turned on.
+
+### Changed
+
+- Enter in the Hosts search field connects only when the list has a single row; with several matches it does nothing. Before, it opened the first of them.
+
+### Fixed
+
+- The bar at the bottom of an ended session no longer covers the last lines of the terminal.
+- The host editor shows Forward agent and Forwarded keys inherited from the group; before, they read as the default.
+- Reconnecting a tab goes on below the earlier output; before, the new session was written over it from the top of the screen.
+- With PostgreSQL the server no longer logs a notice that `termiport_schema` already exists at every start and every command.
+
 ## 26.10.23.26
 
 ### Added
