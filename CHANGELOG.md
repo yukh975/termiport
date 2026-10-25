@@ -6,6 +6,17 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.25.30
+
+### Added
+
+- Port forwarding rules on hosts: local, remote and SOCKS (4, 4a and 5). The host editor gets a Port Forwarding section; Add Forward… opens a sheet with the type, a label, the listen address and port, the destination and "Start with the connection". Listening on an address other than loopback shows a warning. A host can have up to 64 rules; they sync, back up, restore and duplicate with it.
+- Rules with "Start with the connection" start when a terminal tab to the host connects. The tab's context menu has Port Forwarding…, a dialog to start and stop each rule that shows its state, the addresses it listens on and its open connections. A rule that fails to start with the connection also shows a notice in the tab. A tab running forwards shows ⇄ after its title; a host with rules shows ⇄ in the list, and the search matches rule labels.
+- Tunnel tabs: Open Tunnel in the host's context menu connects without a terminal and starts the host's "Start with the connection" rules, or all of them when none has it; Start Forward starts one rule. A rule runs in one tab at a time; starting it in another tab says it is already running there.
+- After an automatic reconnect the rules that were running start again.
+- A forwarded connection whose program on this Mac stops reading is closed once 16 MiB of its data is waiting and nothing has been read for 10 seconds, and the rule's state says why; while it waits, the tab's terminal and other rules pause.
+- Import from `~/.ssh` turns `LocalForward`, `RemoteForward` and `DynamicForward` into rules, applying `GatewayPorts` and `ClearAllForwardings` as OpenSSH does; forms TermiPort does not run (Unix sockets, `RemoteForward` without a destination, port 0, `${VAR}`) stay in the host notes. The import summary counts the rules.
+
 ## 26.10.23.29
 
 ### Added
