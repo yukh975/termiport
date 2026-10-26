@@ -6,6 +6,13 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.35
+
+### Added
+
+- SFTP tabs have a Disconnect button in the host pane, next to its name, and a Disconnect item in the tab's context menu. It closes the connection and keeps the tab, which shows `Session closed` with Close and Reconnect; the tab does not reconnect by itself, even when Reconnect is on for the host. When transfers are running it asks first and cancels them. It is disabled until the tab is connected.
+- Each SFTP pane has Back (⌘[), Forward (⌘]) and Up (⌘↑) buttons before the filter field, with the keys in their tooltips, and its own history of the folders it has shown. Back and Forward are disabled when there is nowhere to go, and Up is disabled at `/`. Going to a folder by a row, a breadcrumb, a typed path or Up adds the folder you left to the history and clears Forward; Refresh and a folder that cannot be opened do not change it. ⌘[ and ⌘] work in the file list like ⌘↑ does.
+
 ## 26.10.26.34
 
 ### Added
