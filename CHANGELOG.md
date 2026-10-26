@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.37
+
+### Added
+
+- A tab can be renamed: Rename… in its context menu or a double-click.
+  The name stays until the tab closes; an empty name brings back the
+  title the terminal sets.
+
 ## 26.10.26.36
 
 ### Added
