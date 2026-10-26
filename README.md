@@ -26,14 +26,14 @@ then System Settings ▸ Privacy & Security ▸ Open Anyway.
 - Agent forwarding through a built-in agent
 - Port forwarding: local, remote, dynamic (SOCKS)
 - SFTP
-- Local terminal (the Mac's own shell) and serial connections
+- Local terminal (the computer's own shell) and serial connections
 - End-to-end encrypted sync
 
 ## Security and sync
 
 - Everything is kept in a local vault encrypted with your master password;
   it can also be unlocked with Touch ID on that Mac.
-- Sync is optional. Records leave the Mac encrypted with a key that only
+- Sync is optional. Records leave the computer encrypted with a key that only
   your devices hold; the server never sees hostnames, usernames, keys or
   device names.
 - A new device needs only the account password and the second factor, if
