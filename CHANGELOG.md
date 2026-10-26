@@ -6,6 +6,18 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.36
+
+### Added
+
+- A serial profile can be saved without a port. The Port list in the profile editor starts with Ask when connecting, which is what a new profile has; choosing it drops the USB identity, and the profile list shows Ask when connecting where it shows the port. Connect on such a profile, from the list, its context menu or the editor, first asks for the port in a Connect dialog with the same live list as quick connect (Other… takes a typed path, and with no ports it says `No serial ports found`); Cancel connects nothing. The port chosen is used by that tab only and is not written to the profile, so the profile keeps all its other settings for any device. Reconnect of the tab finds the same device again, also by its USB identity, and the next Connect asks again.
+
+### Changed
+
+- A TermiPort older than this version lists a profile without a port as `saved by a newer TermiPort`: it cannot connect, edit or duplicate it, and can delete it. Sync and unlocking are not affected.
+- Tabs in the tab bar are narrower: at most 160 px instead of 240 px.
+- When the tabs do not fit in the window, the tab row scrolls with the mouse wheel or a trackpad swipe, without a scroll bar. The tab you switch to scrolls into view. The Hosts tab stays in place.
+
 ## 26.10.26.35
 
 ### Added
