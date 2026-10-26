@@ -6,6 +6,21 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.34
+
+### Added
+
+- SFTP tabs. The new SFTP section of the sidebar (⇧⌘F by default, also Shell ▸ SFTP) lists the hosts; Enter opens an SFTP tab to a host, and the search field takes `user@host:port`. Open SFTP is in the host's context menu and in the context menu of an SSH tab, which opens the SFTP tab right after it; an SFTP tab has Open SSH in its menu. The tab has two panes, this computer and the host, each with breadcrumbs, a filter field that also takes a typed `/path` or `~`, hidden files on demand, sorting by name, size or modified time, and a list that takes the keyboard: arrows, ⇧ to extend, ⌘A, Enter, ⌥↩ to copy the selection to the other pane, ⌘↑ for the parent folder, ⌘I for Info and ⌘⌫ to delete on the host.
+- New Folder on both sides; Rename, Delete and Info on the host; Info and Show in Finder on this computer.
+- Drag and drop. Files and folders dragged from Finder onto the host pane upload into the folder under the pointer (a folder row, or the folder the pane shows), which is outlined while the pointer is over it; a drop anywhere else on an SFTP tab does nothing. Between the panes, pressing a row and moving 4 px drags the selection with a label that follows the pointer (`report.pdf`, or `3 items`); releasing over the other pane's list or a folder row copies there, and releasing anywhere else or pressing Esc cancels.
+- Download to… in the context menu of a host row copies the selection into a folder chosen in the system dialog, and the result line of a finished download has Show in Finder.
+- On macOS every file a download writes to the computer gets the `com.apple.quarantine` attribute, as a browser download does, so macOS checks it before it is opened for the first time. Uploads and folders are not marked.
+- Upload and Download of files and folders with a queue per tab, progress with the speed, Cancel and Cancel All, and a result line. A name that already exists asks what to do: Stop, Skip, Keep Both, Replace for a file or Merge for a folder, each with Apply to all. A file that fails asks Stop or Skip. Files are written under a temporary name and renamed when complete. A tab with a transfer asks before it closes, and so does Quit.
+
+### Changed
+
+- The sidebar has Terminal, Serial and SFTP above the divider, then Hosts, Keys and Known Hosts; Serial moved up from below the divider.
+
 ## 26.10.26.33
 
 ### Added
