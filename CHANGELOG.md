@@ -6,6 +6,12 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.32
+
+### Added
+
+- More… in the Serial quick connect holds the rest of the port settings: data bits, parity, stop bits, flow control, what Enter sends, local echo, logging and reconnect. The values are remembered on this Mac, a reconnect of the tab keeps them, and Save as Profile… fills the editor with all of them.
+
 ## 26.10.25.31
 
 ### Added
@@ -16,6 +22,7 @@ All notable changes to TermiPort, newest first. Format based on
 - Session logs of a serial tab: the bytes the device sent, one file per opened session, switched per profile and from the tab. Settings gets a Serial section with the Log folder (Choose…, Use Default, Show in Finder); the default is `~/Library/Logs/TermiPort/Serial`. Logs are not encrypted and hold everything the device sent.
 - Keyboard shortcuts you can change. Settings gets a Keyboard section that lists every command of the menu and the tab bar with its shortcut: click a field and press the new keys, ⌫ removes the shortcut, Esc cancels, Reset restores one row and Reset All, after a confirmation, all of them. A change works at once in every window and in the menu and survives a restart; the shortcuts are kept on this Mac and are not synced. Quit (⌘Q) and Select All (⌘A) cannot be changed, every other shortcut needs ⌘ (⌃Tab excepted), and a refused shortcut names its reason: a standard menu item, a macOS key, a list key (⌘I, ⌘D, ⌘⌫, ⌘↑) or the command that already has it. Keys are taken by the physical key, so a shortcut recorded on a Russian layout works on any layout. Show Hosts Tab, Show Tab 2 … 8, Show Last Tab and Cycle Tabs can be changed too.
 - Export Settings… and Import Settings… in Settings ▸ General, for moving the settings to a new Mac. `TermiPort Settings.json` holds the terminal settings, the agent settings, the serial log folder and the shortcuts, and nothing from the vault, the sync account, the license or the security settings. Import asks first and lists what it will change, including the agent settings and a shortcut that loses its key to the file; it needs the vault unlocked. A setting missing from the file keeps this Mac's value, what this version does not know is skipped and listed, and one invalid value refuses the whole file and changes nothing.
+
 ### Changed
 
 - The sidebar has Terminal at the top, separated by a divider from Hosts, Serial, Keys and Known Hosts. Terminal opens a local terminal (⌘T by default); the shortcuts of Terminal, Hosts, Serial and Keys show in their tooltips. The "+" button is gone from the tab bar, and Shell ▸ New Tab is now New Terminal.
