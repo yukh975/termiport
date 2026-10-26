@@ -6,11 +6,17 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.26.33
+
+### Added
+
+- Auto-lock: the vault locks the same way as Lock Vault after a period without input (15 minutes by default; 1 minute to 4 hours or never, in Settings → Security) and when the computer locks or sleeps (can be turned off there). Terminal output does not count as activity; open connections stay up, as with Lock Vault.
+
 ## 26.10.26.32
 
 ### Added
 
-- More… in the Serial quick connect holds the rest of the port settings: data bits, parity, stop bits, flow control, what Enter sends, local echo, logging and reconnect. The values are remembered on this Mac, a reconnect of the tab keeps them, and Save as Profile… fills the editor with all of them.
+- More… in the Serial quick connect holds the rest of the port settings: data bits, parity, stop bits, flow control, what Enter sends, local echo, logging and reconnect. The values are remembered on this computer, a reconnect of the tab keeps them, and Save as Profile… fills the editor with all of them.
 
 ## 26.10.25.31
 
@@ -20,8 +26,8 @@ All notable changes to TermiPort, newest first. Format based on
 - A serial profile remembers the USB identity of its port. When the saved path is gone, Connect opens the one listed port with the same identity and the tab says where the device is now; with no such port, or with several, the tab shows an error with Edit Profile…. A port is opened exclusively, so one that is in use is reported, not shared.
 - The context menu of a serial tab: Reconnect, Send Break, DTR and RTS, Start Logging / Stop Logging, Show Log in Finder, Edit Profile… or Save as Profile…, Close. When the device is unplugged, the tab says "the device was disconnected"; with reconnect on it shows "Disconnected: … Waiting for the device…", looks for the device every second and opens it again with the logging, DTR and RTS it had; Cancel stops the wait.
 - Session logs of a serial tab: the bytes the device sent, one file per opened session, switched per profile and from the tab. Settings gets a Serial section with the Log folder (Choose…, Use Default, Show in Finder); the default is `~/Library/Logs/TermiPort/Serial`. Logs are not encrypted and hold everything the device sent.
-- Keyboard shortcuts you can change. Settings gets a Keyboard section that lists every command of the menu and the tab bar with its shortcut: click a field and press the new keys, ⌫ removes the shortcut, Esc cancels, Reset restores one row and Reset All, after a confirmation, all of them. A change works at once in every window and in the menu and survives a restart; the shortcuts are kept on this Mac and are not synced. Quit (⌘Q) and Select All (⌘A) cannot be changed, every other shortcut needs ⌘ (⌃Tab excepted), and a refused shortcut names its reason: a standard menu item, a macOS key, a list key (⌘I, ⌘D, ⌘⌫, ⌘↑) or the command that already has it. Keys are taken by the physical key, so a shortcut recorded on a Russian layout works on any layout. Show Hosts Tab, Show Tab 2 … 8, Show Last Tab and Cycle Tabs can be changed too.
-- Export Settings… and Import Settings… in Settings ▸ General, for moving the settings to a new Mac. `TermiPort Settings.json` holds the terminal settings, the agent settings, the serial log folder and the shortcuts, and nothing from the vault, the sync account, the license or the security settings. Import asks first and lists what it will change, including the agent settings and a shortcut that loses its key to the file; it needs the vault unlocked. A setting missing from the file keeps this Mac's value, what this version does not know is skipped and listed, and one invalid value refuses the whole file and changes nothing.
+- Keyboard shortcuts you can change. Settings gets a Keyboard section that lists every command of the menu and the tab bar with its shortcut: click a field and press the new keys, ⌫ removes the shortcut, Esc cancels, Reset restores one row and Reset All, after a confirmation, all of them. A change works at once in every window and in the menu and survives a restart; the shortcuts are kept on this computer and are not synced. Quit (⌘Q) and Select All (⌘A) cannot be changed, every other shortcut needs ⌘ (⌃Tab excepted), and a refused shortcut names its reason: a standard menu item, a macOS key, a list key (⌘I, ⌘D, ⌘⌫, ⌘↑) or the command that already has it. Keys are taken by the physical key, so a shortcut recorded on a Russian layout works on any layout. Show Hosts Tab, Show Tab 2 … 8, Show Last Tab and Cycle Tabs can be changed too.
+- Export Settings… and Import Settings… in Settings ▸ General, for moving the settings to a new computer. `TermiPort Settings.json` holds the terminal settings, the agent settings, the serial log folder and the shortcuts, and nothing from the vault, the sync account, the license or the security settings. Import asks first and lists what it will change, including the agent settings and a shortcut that loses its key to the file; it needs the vault unlocked. A setting missing from the file keeps this computer's value, what this version does not know is skipped and listed, and one invalid value refuses the whole file and changes nothing.
 
 ### Changed
 
@@ -36,7 +42,7 @@ All notable changes to TermiPort, newest first. Format based on
 - Rules with "Start with the connection" start when a terminal tab to the host connects. The tab's context menu has Port Forwarding…, a dialog to start and stop each rule that shows its state, the addresses it listens on and its open connections. A rule that fails to start with the connection also shows a notice in the tab. A tab running forwards shows ⇄ after its title; a host with rules shows ⇄ in the list, and the search matches rule labels.
 - Tunnel tabs: Open Tunnel in the host's context menu connects without a terminal and starts the host's "Start with the connection" rules, or all of them when none has it; Start Forward starts one rule. A rule runs in one tab at a time; starting it in another tab says it is already running there.
 - After an automatic reconnect the rules that were running start again.
-- A forwarded connection whose program on this Mac stops reading is closed once 16 MiB of its data is waiting and nothing has been read for 10 seconds, and the rule's state says why; while it waits, the tab's terminal and other rules pause.
+- A forwarded connection whose program on this computer stops reading is closed once 16 MiB of its data is waiting and nothing has been read for 10 seconds, and the rule's state says why; while it waits, the tab's terminal and other rules pause.
 - Import from `~/.ssh` turns `LocalForward`, `RemoteForward` and `DynamicForward` into rules, applying `GatewayPorts` and `ClearAllForwardings` as OpenSSH does; forms TermiPort does not run (Unix sockets, `RemoteForward` without a destination, port 0, `${VAR}`) stay in the host notes. The import summary counts the rules.
 
 ## 26.10.23.29
@@ -60,7 +66,7 @@ All notable changes to TermiPort, newest first. Format based on
 - Erase All also removes Secure Enclave keys that have no key record left; before, the app kept offering to restore them.
 - Closing the Termius import, SSH import or backup dialog drops what it read (Termius passwords and keys, backup contents) at once, and Termius passwords and private keys are zeroed when freed; before, they stayed in memory until the vault was locked or the next scan.
 - Adding a device with the sync password has its own limit of five tries a day, and a correct password does not count; before, it used up the tries of the recovery code even when the password was right. When the tries run out, the app falls back to approval from another device, as for a wrong password.
-- The account's address gets a letter when a device joins with the sync password, and one for every device removed because a new device took its place on the same Mac after approval or recovery; before, both happened without a letter.
+- The account's address gets a letter when a device joins with the sync password, and one for every device removed because a new device took its place on the same computer after approval or recovery; before, both happened without a letter.
 - With PostgreSQL, the server gives up on connecting to the database after 5 seconds unless `connect_timeout` is set, and a request that waits more than 10 seconds for a free connection fails instead of waiting forever.
 - With PostgreSQL, a connection whose request was dropped while waiting for its turn to write is closed instead of going back to the pool, where the next request would have waited behind it.
 - PostgreSQL errors in the server log leave out the error detail, which can hold values from the rows; the code, message, table and constraint stay.
@@ -191,7 +197,7 @@ All notable changes to TermiPort, newest first. Format based on
 
 ### Added
 
-- **Back Up…** (Shell menu) saves hosts, groups, keys with their passphrases, saved passwords and known hosts to a file encrypted with a backup password of at least 8 characters. The password does not depend on this Mac, so the backup restores on any device. Secure Enclave keys stay out: they cannot leave the Mac.
+- **Back Up…** (Shell menu) saves hosts, groups, keys with their passphrases, saved passwords and known hosts to a file encrypted with a backup password of at least 8 characters. The password does not depend on this computer, so the backup restores on any device. Secure Enclave keys stay out: they cannot leave the Mac.
 - **Restore from Backup…** (Shell menu) opens a backup with its password, shows what it holds and adds only what is missing: nothing already here is deleted or overwritten, and links between hosts, groups and keys are kept.
 - Settings → Sync shows the server license: its state, expiry, grace period, limits, current usage and how to renew it.
 - In-app updates through the sync server: with sync on, TermiPort looks for a newer version at launch and on **TermiPort → Check for Updates…**, shows what is new and installs it with one click, then restarts. Only updates signed by the vendor's key install. Without sync, the dialog points to Settings → Sync.
@@ -202,7 +208,7 @@ All notable changes to TermiPort, newest first. Format based on
 ### Added
 
 - Select several hosts and groups with ⌘-click, Shift-click, Shift-arrows or ⌘A and delete them together; deleting a group takes its subgroups and hosts with it.
-- **TermiPort → Erase All Data…** deletes every host, group, key and known host on this Mac and on every device that syncs with it. Sync settings stay.
+- **TermiPort → Erase All Data…** deletes every host, group, key and known host on this computer and on every device that syncs with it. Sync settings stay.
 
 ### Changed
 
@@ -230,8 +236,8 @@ All notable changes to TermiPort, newest first. Format based on
 
 ### Fixed
 
-- After a sync password reset, signing in on another Mac with the new password and the second factor no longer waits for approval from another device. Needs the updated sync server.
-- Reinstalling TermiPort or signing in to sync again on the same Mac replaces that Mac's old device instead of leaving it behind and taking another seat. Needs the updated sync server; devices left over from earlier builds are removed by hand in the device list.
+- After a sync password reset, signing in on another computer with the new password and the second factor no longer waits for approval from another device. Needs the updated sync server.
+- Reinstalling TermiPort or signing in to sync again on the same computer replaces that computer's old device instead of leaving it behind and taking another seat. Needs the updated sync server; devices left over from earlier builds are removed by hand in the device list.
 - The Settings window keeps one size on every tab instead of resizing to each page.
 - In Settings → Security, each row label now sits level with the first line of its data instead of floating above it.
 - Settings → Security row labels use the muted colour, so a label is no longer the same colour as the data beside it.
@@ -258,7 +264,7 @@ All notable changes to TermiPort, newest first. Format based on
 
 ### Added
 
-- Forgot Password? on the sync sign-in form: the server mails a reset code, or its administrator issues one. After the new password the app asks for the second factor again if the account has one; a recovery code used for the reset also adds this Mac.
+- Forgot Password? on the sync sign-in form: the server mails a reset code, or its administrator issues one. After the new password the app asks for the second factor again if the account has one; a recovery code used for the reset also adds this device.
 
 ## 26.10.22 build 14
 
@@ -392,11 +398,11 @@ All notable changes to TermiPort, newest first. Format based on
 - Agent forwarding per host and group: "Forward agent" (off by default, inherited from groups) lets programs on the remote host, such as `ssh`, `git` or `sudo` through `pam_rssh`, use your keys while you are connected; "Forwarded keys" chooses which keys it offers (this host's keys, all keys or chosen keys). Requests from a forwarded agent are asked about in the tab, with the tab's name in the question; a tab with such a question is marked as waiting and adds "— waiting for input" to the window title, and closing the tab ends its forwarded requests. Host cards show a "forwards agent" badge.
 - Import from ~/.ssh takes `ForwardAgent yes` and `no` into the host's "Forward agent" (a `no` is stored on the host when it would otherwise inherit forwarding from its group); a socket path or variable as the value turns forwarding on with a warning, and `IdentityAgent`, `SecurityKeyProvider` and `AddKeysToAgent` are skipped with a warning (`AddKeysToAgent` in the system file is still skipped without one).
 - Secure Enclave keys: Keys ▸ + Key ▸ Create Secure Enclave Key… makes a key that never leaves this Mac's Secure Enclave, protected by Touch ID or the Mac's password, by Touch ID only, or (under Advanced) with no prompt. Sessions and the agent sign with it; Touch ID is asked for in the tab with Skip This Key and Cancel, or by the agent for programs, and a key with no prompt is confirmed like a software key. Locking the vault closes a Touch ID request the agent is showing.
-- A vault copied to another Mac marks its Secure Enclave keys as not usable there ("Not usable on this Mac", "On <Mac name>"); such keys can be hidden on this Mac (Hide on This Mac, Show on This Mac), and hidden keys are left out of the host and group editors.
+- A vault copied to another Mac marks its Secure Enclave keys as not usable there ("Not usable on this computer", "On <Mac name>"); such keys can be hidden on this computer (Hide on This Computer, Show on This Computer), and hidden keys are left out of the host and group editors.
 - Recovered keys: a Secure Enclave key found again after its entry was lost can be restored with Restore Key….
-- The Keys pane shows each key's kind (Secure Enclave), its protection, whether it is offered in the agent (Offer in Agent in the key's menu) and whether it is usable on this Mac.
+- The Keys pane shows each key's kind (Secure Enclave), its protection, whether it is offered in the agent (Offer in Agent in the key's menu) and whether it is usable on this computer.
 - Shell ▸ Keys (⇧⌘K) opens the Keys pane, and pressing it again goes back to the hosts.
-- Touch ID unlock: Settings ▸ Security ▸ "Unlock with Touch ID" (turned on with the master password, per Mac) lets the lock screen open the vault with Touch ID. The lock screen asks for Touch ID by itself once per lock in the focused window and has an "Unlock with Touch ID" button; the master password always works too.
+- Touch ID unlock: Settings ▸ Security ▸ "Unlock with Touch ID" (turned on with the master password, per computer) lets the lock screen open the vault with Touch ID. The lock screen asks for Touch ID by itself once per lock in the focused window and has an "Unlock with Touch ID" button; the master password always works too.
 - While the vault is locked, the agent unlocks it with Touch ID when Touch ID unlock is on, and the unlock card's Unlock button starts Touch ID.
 - When Touch ID unlock stops working (the master password was changed by an older TermPort, the Touch ID fingerprints changed, or the vault came from another Mac), the lock screen and Settings ▸ Security say why and how to turn it on again; a Touch ID unlock set up by a newer TermPort is left untouched and reported as such.
 - Security keys (FIDO2, such as YubiKey): Keys ▸ + Key ▸ Create Security Key… makes an `ecdsa-sk` or `ed25519-sk` key on a plugged-in security key, with a choice of device when several are plugged in and, under Advanced, the application, storing the credential on the key, requiring the PIN on every use and not requiring a touch.
@@ -442,7 +448,7 @@ All notable changes to TermiPort, newest first. Format based on
 - A `ProxyJump` in `~/.ssh/config` with an `ssh://` user that percent-decodes to a quote, `\`, `$`, a backtick, a shell operator or a space is now rejected like the same characters written directly.
 - Public-key login with an RSA key whose size is not a multiple of 64 bits (for example 2049) no longer fails: the signature had extra leading zero bytes, which OpenSSH rejects.
 - `scripts/version.sh` also updates the workspace versions in `Cargo.lock`.
-- Reset TermPort closes every open session, local shells and SSH alike, before it deletes the vault, and the Reset dialog says so. Before, sessions left open behind the lock screen took input again once a new master password was set after the reset, so anyone at the Mac could get them back without the master password.
+- Reset TermPort closes every open session, local shells and SSH alike, before it deletes the vault, and the Reset dialog says so. Before, sessions left open behind the lock screen took input again once a new master password was set after the reset, so anyone at the computer could get them back without the master password.
 - When keepalive is on (the default), an SSH session ends with "timed out while waiting for the server" once the server has accepted no data for four keepalive intervals (2 minutes at the default 30 s), instead of hanging during a large paste. With Keepalive 0 there is no such timeout.
 - When a jump host drops the connection, the reason shown is the jump host's own (for example its disconnect message), not "connection lost".
 - Saving a host or group is refused when it would make another host's jump route longer than allowed; the error names that host.
@@ -540,7 +546,7 @@ Stage 2: SSH basics.
 Stage 1: local terminal.
 
 ### Added
-- **Local terminal in tabs.** Each tab runs your login shell on the Mac. New tab: ⌘T or the + button; close: ⌘W or a middle click; switch: ⌘1…⌘9 (⌘9 is the last tab), ⌃Tab / ⌃⇧Tab, ⇧⌘[ / ⇧⌘]. The tab title follows the terminal title; a dot marks new output in a background tab. When the shell exits normally the tab closes; otherwise it stays open and shows the exit code.
+- **Local terminal in tabs.** Each tab runs your login shell on the computer. New tab: ⌘T or the + button; close: ⌘W or a middle click; switch: ⌘1…⌘9 (⌘9 is the last tab), ⌃Tab / ⌃⇧Tab, ⇧⌘[ / ⇧⌘]. The tab title follows the terminal title; a dot marks new output in a background tab. When the shell exits normally the tab closes; otherwise it stays open and shows the exit code.
 - **Themes, Homebrew by default** (green on black), plus System (follows the macOS appearance), Light, Dark, Solarized Light and Solarized Dark. The tab bar and the rest of the window follow the theme colors.
 - **Settings (⌘,):** theme, font, size, line height, cursor shape and blinking, scrollback length, Option as Meta. Only changed values are stored, so a new default reaches every setting you never touched.
 - **Font size from the keyboard:** ⌘= bigger, ⌘− smaller, ⌘0 actual size.
