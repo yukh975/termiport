@@ -6,6 +6,35 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.28.39
+
+### Added
+
+- PuTTY private keys (`.ppk`, versions 2 and 3) can be added from a file
+  or pasted, plain or encrypted. They are stored as OpenSSH keys; an
+  encrypted one keeps its passphrase. The key comment becomes the key
+  name. Format 1 is refused with a hint to re-save it in PuTTYgen.
+  Import from `~/.ssh` takes unencrypted `.ppk` keys the same way; an
+  encrypted one is listed with a hint to add it in Keys.
+
+### Changed
+
+- One Import dialog (Shell → Import…, and Import… in the Hosts pane and
+  the empty host list) replaces Import from ~/.ssh…: source, preview,
+  result. In the preview, Put into chooses the top level, an existing
+  group or a new group. A host that matches a saved one by address, port
+  and username is skipped by default and can be updated with what the
+  source adds or imported as a copy. Jump hosts a selected host needs are
+  selected with it.
+
+### Fixed
+
+- Automatic reconnect follows the host's current setting when a session
+  ends, not the one it had when the tab was opened: turning Reconnect on
+  or off for a host or its group applies to tabs that are already open.
+- `termiport-license issue` names `--perpetual` next to `--until` in its
+  usage line, so the error for a missing expiry shows both choices.
+
 ## 26.10.28.38
 
 ### Changed
