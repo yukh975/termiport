@@ -6,6 +6,26 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.28.38
+
+### Changed
+
+- With Reconnect on, a session the server or device closes, with any
+  exit status, also reconnects after the pause; before, only a dropped
+  connection did. The bar shows `Session closed` or the exit code with
+  the countdown.
+- Locking now covers local terminal tabs too: the lock screen shows
+  over them and typing into them is refused until unlock. A new local
+  tab cannot be opened while locked.
+- Switching to the Hosts tab always opens the Hosts section, so a typed
+  host name no longer lands in the SFTP or another section left open
+  before. TermiPort also starts on Hosts instead of the last section.
+
+### Fixed
+
+- After switching tabs with ⌘+digit, typing could go to the hidden
+  Hosts search instead of the terminal until it was clicked.
+
 ## 26.10.26.37
 
 ### Added
