@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.46
+
+### Fixed
+
+- Android sync HTTPS uses Mozilla CA roots instead of the platform TrustManager,
+  so Let's Encrypt certificates are not falsely treated as revoked and sign-in
+  can reach the second factor.
+
 ## 26.10.29.45
 
 ### Fixed
