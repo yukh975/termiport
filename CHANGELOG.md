@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.45
+
+### Fixed
+
+- Android release builds keep the rustls platform verifier: R8 no longer
+  strips it, so sync can reach the server after the password step and
+  continue to the second factor.
+
 ## 26.10.29.44
 
 ### Fixed
