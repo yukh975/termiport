@@ -6,6 +6,86 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.40
+
+### Fixed
+
+- SecureCRT session names and jump references match across Unicode forms,
+  including decomposed filenames returned by macOS.
+
+### Added
+
+- Import reads Tabby configurations from a picked file or its detected config
+  folder: SSH hosts, groups, key references, jump hosts, forwarding rules and
+  supported serial profiles. Missing SSH users default to root; group defaults
+  are reported and not applied. Encrypted configs and excessive YAML expansion
+  are refused.
+- The sync server can answer under former addresses listed in `aliases`,
+  so devices set up with an old address keep syncing after the server
+  moves.
+- Import can read a file or a folder you pick: From file… and From
+  folder… on its first step. The format is found from the content, so
+  the file name and extension do not matter. An OpenSSH config is read
+  from any file. A folder with a `config`, keys or `known_hosts` is read
+  as an `.ssh` folder under any name, such as a copied `.ssh` folder from
+  another computer: hosts, keys, known hosts and forwarding rules come
+  from that folder, and `~/.ssh/…` paths in the config point into it. A
+  key that is not there is a warning on the host. A picked `.ppk` file
+  opens the key sheet. The first step always lists the supported formats,
+  and a file in none of them gets the same list in the message.
+- Import reads PuTTY and KiTTY sessions from a `.reg` export, a session
+  file or a sessions folder, found from the content. The PuTTY sessions
+  folder (`$PUTTYDIR/sessions`, `~/.config/putty/sessions` or
+  `~/.putty/sessions`) is also a source on the first step when it exists.
+  Hosts come with their address, port, user name, agent forwarding,
+  keep-alive and forwarding rules; KiTTY folders and sub-folders become
+  groups. A key file a session names is not opened while scanning: it is
+  a row under Keys, read on request with Read, Read all or Choose file…,
+  then imported and linked to the host. A `.ppk` is stored as an OpenSSH
+  key; an encrypted key asks for its passphrase, which can be saved. A
+  host whose key was not read is imported without a key, and the path
+  goes to its Notes, together with the settings TermiPort does not run
+  (proxy, remote command, X11 forwarding, login command). Serial
+  sessions become serial profiles, with the same Skip, Update or Copy for
+  those already saved. Telnet, raw, rlogin, SSH-1 and serial sessions with
+  a setting TermiPort lacks are listed under Not imported with the
+  reason. Saved passwords are not read.
+- Import reads MobaXterm sessions from `MobaXterm.ini` or a `.mxtsessions`
+  export, found from the content. SSH sessions come with their address,
+  port, user name, agent forwarding and comment; session folders become
+  groups. A gateway of a session becomes a jump host, in the order
+  MobaXterm lists them: a gateway that is another session of the file or
+  a host already saved is linked, any other is created as a host. A key
+  file a session names is a row under Keys, as for PuTTY, and is not
+  opened while scanning. The proxy, remote command, X11 forwarding and
+  gateway key of a session go to its Notes. Telnet, RDP, VNC, SFTP,
+  browser, SSH-1 and serial sessions are listed under Not imported with
+  the reason. Saved passwords are not read.
+- Import reads SecureCRT sessions from the `Sessions` folder of its
+  configuration, from a copy of that folder picked with From folder…, or
+  from one session `.ini` file picked with From file…; the format is found
+  from the content. On Windows, `%APPDATA%\VanDyke\Config\Sessions` is
+  also a source on the first step when it exists. SSH sessions come with
+  their address, port, user name, keep-alive and description; session
+  folders become groups. A session whose firewall is `Session:<name>`
+  gets that session as its jump host; if that session is not in the
+  import, the host is imported without a jump host and a warning says so.
+  A key file a session names is a row under Keys, as for PuTTY, and is
+  not opened while scanning. Any other firewall of a session goes to its
+  Notes. Telnet, RLogin, RDP, raw, TAPI, SSH-1 and serial sessions are
+  listed under Not imported with the reason. The XML export and port
+  forwarding rules are not read yet. Saved passwords are not read.
+
+### Changed
+
+- The About window links to termiport.com, and sync setup offers
+  `sync.termiport.com` as the server.
+- Termius is a source in the Import dialog, with the same preview, Skip,
+  Update or Copy for hosts that are already saved, and Put into. Saved
+  passwords come only with Also import saved passwords, which is off by
+  default. The separate Import from Termius… item is gone; a shortcut set
+  for it now opens Import, unless Import has its own.
+
 ## 26.10.28.39
 
 ### Added
