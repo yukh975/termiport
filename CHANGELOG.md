@@ -6,6 +6,44 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.44
+
+### Fixed
+
+- Settings and other dialogs fill the phone screen: section tabs wrap, the
+  settings grid stacks in one column, and content scrolls instead of clipping
+  off the side.
+- Settings ▸ License lets you install a license file without sync signed in;
+  the file is kept on the device and applied when sync turns on.
+
+## 26.10.29.43
+
+### Fixed
+
+- Settings and other dialogs fill the phone screen: section tabs wrap, the
+  settings grid stacks in one column, and content scrolls instead of clipping
+  off the side.
+
+## 26.10.29.42
+
+### Added
+
+- Android phone layout modelled on Termius: top bar, section drawer, tab
+  switcher, overflow and context menus as action sheets, and an extra-key
+  row above the soft keyboard on terminal tabs.
+- The Android launcher icon is the TermiPort mark (adaptive mipmaps), not
+  the Tauri placeholder from `tauri android init`.
+
+### Fixed
+
+- Opening the vault on Android no longer fails with `try_lock() not
+  supported` on app-private storage; one process per package is enough.
+- The phone UI loads the vault before optional window APIs that hang on
+  Android WebView, so the lock screen and Hosts list appear instead of a
+  blank page.
+- Publishing an Android APK to GitHub replaces the previous asset of the
+  same name, so a rebuilt APK is not left behind on the release.
+
 ## 26.10.29.41
 
 ### Added
