@@ -6,6 +6,16 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.41
+
+### Added
+
+- Import reads a CSV file with a header row: SSH hosts, groups, key
+  references and jump hosts. Column names are matched without case, spaces,
+  `_` or `-`; `,`, `;` or tab as the delimiter. Password columns are
+  reported and not imported. A file that is not UTF-8 can be decoded as
+  Windows-1252 or Windows-1251 from Text encoding in the preview.
+
 ## 26.10.29.40
 
 ### Fixed
