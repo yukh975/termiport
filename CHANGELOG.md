@@ -6,6 +6,19 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.52
+
+### Fixed
+
+- On Android, soft-keyboard typing in an SSH session reaches the terminal again
+  (xterm was swallowing IME `input` events after keyCode 229).
+
+### Changed
+
+- Phone Hosts: search is a full-width row; + Host / + Group sit under it; Import
+  moves into the single side menu (hamburger), which also replaces the separate
+  ⋮ overflow menu.
+
 ## 26.10.30.51
 
 ### Fixed
