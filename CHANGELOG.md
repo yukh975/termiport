@@ -6,6 +6,21 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.29.47
+
+### Added
+
+- Android can check for updates and install a signed APK through PackageInstaller
+  (after allowing installs from TermiPort). The update target is `android-aarch64`.
+- Android keeps SSH and local sessions alive when the app is backgrounded
+  (foreground service, detach/reattach, and a Reopen notice after process death).
+- Android vault unlock with fingerprint on API 31+ (Android Keystore ECDH, same
+  BioSlot path as Touch ID on Mac).
+
+### Fixed
+
+- Android native plugins no longer overwrite each other under one Tauri plugin id.
+
 ## 26.10.29.46
 
 ### Fixed
