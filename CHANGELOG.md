@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.54
+
+### Fixed
+
+- Android soft keyboard: use a dedicated near-invisible IME overlay and lift
+  xterm’s helper textarea above opacity 0, so Chromium/Gboard actually attaches
+  and typed characters reach the SSH session.
+
 ## 26.10.30.53
 
 ### Fixed
