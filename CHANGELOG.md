@@ -6,6 +6,13 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.51
+
+### Fixed
+
+- Selected hosts in the hosts list show a clear highlight and a left accent bar,
+  so multi-select is visible without relying on the detail pane or toolbar.
+
 ## 26.10.30.50
 
 ### Added
