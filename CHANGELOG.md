@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.53
+
+### Fixed
+
+- Android soft-keyboard input in SSH sessions: detect Android at keystroke time
+  (not only at tab mount), accept plain `input` events from WebView, and fall
+  back when IME only fills the helper textarea after keyCode 229.
+
 ## 26.10.30.52
 
 ### Fixed
