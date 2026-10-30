@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.48
+
+### Fixed
+
+- Android release builds bake in the update server address, so Check for Updates
+  and in-app APK install work (26.10.29.47 omitted it and always reported that
+  the build does not receive updates).
+
 ## 26.10.29.47
 
 ### Added
