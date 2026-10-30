@@ -6,6 +6,14 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.10.30.54
+
+### Исправлено
+
+- Экранная клавиатура Android: отдельный почти невидимый IME-overlay и
+  поднятие helper-textarea xterm выше opacity 0, чтобы Chromium/Gboard
+  подключались и символы доходили до SSH-сессии.
+
 ## 26.10.30.53
 
 ### Исправлено
