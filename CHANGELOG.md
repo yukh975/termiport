@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.50
+
+### Added
+
+- Select several hosts in the hosts list (⌘/Ctrl-click, Shift-click, or Select All
+  after a search) and open them all in separate tabs with Enter, Connect, or the
+  context menu.
+
 ## 26.10.30.49
 
 ### Fixed
