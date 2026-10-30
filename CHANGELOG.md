@@ -6,6 +6,18 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.10.30.49
+
+### Fixed
+
+- Android fingerprint unlock no longer freezes on “Unlock with Fingerprint”
+  (BiometricPrompt resolves asynchronously instead of blocking the plugin thread).
+
+### Changed
+
+- On phone-sized screens, Settings is a section list with Back into each pane
+  instead of a wrap of tiny tabs; buttons and links use larger tap targets.
+
 ## 26.10.30.48
 
 ### Fixed
