@@ -6,6 +6,25 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.5.56
+
+### Fixed
+
+- Windows: the app no longer quits at launch and leaves an empty window. The
+  built-in agent opens its named pipe on the async runtime, the same way the
+  Mac app opens its socket.
+- Windows: the local SFTP pane opens the user profile. A drive path such as
+  `C:\Users\yukh` is no longer rewritten with a leading slash, which made
+  Windows reject the folder.
+
+## 26.10.30.55
+
+### Fixed
+
+- Android soft keyboard: stop xterm from swallowing IME input after keyCode 229
+  (`_keyDownSeen`), and forward typed text from both the helper textarea and the
+  IME overlay so characters reach the SSH session.
+
 ## 26.10.30.54
 
 ### Fixed
