@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.6.57
+
+### Added
+
+- Windows: **Check for Updates…** downloads the installer and installs it.
+  The installer closes TermiPort and opens it again. Authenticode signing runs
+  when a code-signing certificate is configured for the build.
+
 ## 26.11.5.56
 
 ### Fixed
