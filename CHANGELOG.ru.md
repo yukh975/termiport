@@ -6,6 +6,16 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.11.6.58
+
+### Добавлено
+
+- Пакеты настольного приложения для Linux. `.deb`, собранный на Ubuntu 22.04,
+  ставится на Ubuntu 22.04 и 24.04 и на Debian 12 и 13. Для ALT p11 и Sisyphus
+  собирается `.rpm`. AppImage — для остальных дистрибутивов, где есть WebKitGTK 4.1.
+- Linux: **Check for Updates…** ставит этот пакет. На Debian, Ubuntu и ALT
+  запрос идёт через PolicyKit. AppImage заменяет свой файл и открывается снова.
+
 ## 26.11.6.57
 
 ### Добавлено
