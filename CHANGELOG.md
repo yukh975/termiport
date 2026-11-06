@@ -6,6 +6,17 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.6.58
+
+### Added
+
+- Linux desktop packages. A `.deb` built on Ubuntu 22.04 installs on Ubuntu
+  22.04 and 24.04 and on Debian 12 and 13. ALT p11 and Sisyphus get an `.rpm`.
+  An AppImage covers other distributions that have WebKitGTK 4.1.
+- Linux: **Check for Updates…** installs that package. On Debian, Ubuntu, and
+  ALT it asks through PolicyKit. An AppImage replaces its own file and opens
+  again.
+
 ## 26.11.6.57
 
 ### Added
