@@ -6,6 +6,19 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.7.59
+
+### Added
+
+- Vault and sync password fields have an eye. It shows the master password on
+  the lock screen, when creating it, and when changing it, and the sync
+  password when signing in, creating an account, confirming it, or changing it.
+
+### Fixed
+
+- Windows and Linux: the Hosts tab starts at the left. The gap for the macOS
+  window buttons stays on macOS only.
+
 ## 26.11.6.58
 
 ### Added
