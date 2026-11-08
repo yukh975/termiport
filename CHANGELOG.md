@@ -6,6 +6,17 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.8.60
+
+### Changed
+
+- Windows installer: when TermiPort is already installed, the selected choice is
+  to install over it and keep settings. Uninstall stays on that page.
+
+### Fixed
+
+- Windows: Check for Updates starts the installer.
+
 ## 26.11.7.59
 
 ### Added
