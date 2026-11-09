@@ -6,6 +6,130 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.9.75
+
+### Fixed
+
+- Android: terminal typing actually reaches the session. Tauri on Android never
+  delivers `InvokeBody::Raw`, so every `session_write` failed with "expected raw
+  bytes"; keystrokes now go through `session_write_b64`. Local shell starts as
+  `sh -i` so the prompt and echo show up.
+- Tests: `no_common_kex_is_readable` no longer uses `diffie-hellman-group1-sha1`
+  (the client still offers it for Cisco); the fixture server offers `none`.
+
+## 26.11.9.74
+
+### Fixed
+
+- Android: the terminal IME overlay no longer steals focus on every tap (that
+  opened the keyboard everywhere and swallowed input). Focus only when the
+  terminal asks for the keyboard.
+
+## 26.11.9.73
+
+### Fixed
+
+- Android (Samsung): accept soft-keyboard input via `sendKeyEvent` /
+  `setComposingText` as well as `commitText` — Samsung Keyboard on S23 was
+  opening Gboard but never delivering characters.
+
+## 26.11.9.72
+
+### Fixed
+
+- Android: Termux-style full-screen InputConnection for terminal typing (replaces
+  the tiny EditText), plus a KB key on the extra-keys bar to reopen Gboard.
+
+## 26.11.9.71
+
+### Added
+
+- Drag to reorder session tabs (desktop tab bar and phone tab sheet).
+
+## 26.11.9.70
+
+### Fixed
+
+- Android: terminal typing through a real native `EditText` InputConnection
+  (WebView focus disabled while the keyboard is open; text injected into the
+  page). Phone dialog actions (Later/Install) and Reconnect/Close share equal
+  button widths.
+
+## 26.11.9.69
+
+### Fixed
+
+- Android: soft keyboard via a native `InputConnection` view (Termux/Termius
+  style: `VISIBLE_PASSWORD|NO_SUGGESTIONS`). WebView/xterm overlays never got
+  reliable Gboard input — tap the terminal to type.
+
+## 26.11.9.68
+
+### Fixed
+
+- Android: soft keyboard typing again. Drop the ExtraKeys text field (Gboard
+  never reliably fed it); restore the near-invisible terminal IME overlay with
+  `beforeinput` / value flush — the WebView stand-in for Termius/Termux’s
+  native InputConnection path.
+
+## 26.11.9.67
+
+### Fixed
+
+- Android: Install again opens the system package installer. `.64` dropped
+  `REQUEST_INSTALL_PACKAGES` / PackageInstaller to quiet Play Protect, which
+  made the Install button do nothing — restore that path (Play Protect may warn
+  once on sideloaded builds).
+
+## 26.11.9.66
+
+### Fixed
+
+- SSH: offer legacy key exchange, CBC ciphers, HMAC-SHA1, and plain `ssh-rsa`
+  (last) so older Cisco IOS appliances can connect.
+
+## 26.11.9.65
+
+### Fixed
+
+- Android: type into a real text field above ExtraKeys. xterm's helper cannot
+  host Gboard/Samsung Keyboard; ExtraKeys no longer steal focus into that helper.
+
+## 26.11.9.64
+
+### Fixed
+
+- Android: drop `REQUEST_INSTALL_PACKAGES` so Play Protect stops flagging the
+  sideloaded APK; updates open through the system installer UI.
+- Android: soft keyboard / paste — treat the helper as a real visible field
+  (opacity 1), and forward paste / `insertFromPaste` into the session.
+
+## 26.11.9.63
+
+### Fixed
+
+- Phone: the menu opens while the vault is locked and offers Check for Updates and About.
+
+## 26.11.9.62
+
+### Fixed
+
+- Android: soft keyboard and terminal cursor. Focus stays on xterm’s helper
+  textarea (full-size, slightly visible so Gboard attaches); the previous
+  overlay stole focus and hid the cursor. Activity uses `adjustResize`.
+
+## 26.11.9.61
+
+### Added
+
+- Hosts search: clear with the X control or Escape.
+
+### Fixed
+
+- Android: soft keyboard (Gboard and others) types into the SSH terminal again.
+  Input no longer depends on xterm’s helper field or `isComposing`, and Android
+  is detected from the WebView user agent before env info returns.
+
 ## 26.11.8.60
 
 ### Changed
