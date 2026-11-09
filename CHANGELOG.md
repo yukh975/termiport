@@ -6,6 +6,46 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.9.78
+
+### Fixed
+
+- macOS: Touch ID on the lock screen actually shows again. The system sheet
+  needs a focused window; auto-prompt waits for focus and a short delay, and
+  dismissing the sheet no longer flips straight to the password form. The
+  automatic update dialog no longer opens over the lock screen (it was
+  cancelling LocalAuthentication). Check for Updates… still works while locked.
+- Android: fingerprint unlock auto-prompts on the lock screen (longer settle for
+  BiometricPrompt; failed first attempts retry instead of sticking on password).
+- Android: soft keyboard opens only from the ExtraKeys KB button — terminal taps
+  no longer raise Gboard, so the session can scroll normally.
+- Android: terminal cursor stays visible (canvas renderer; inactive caret matches
+  the chosen style when focus is on the native IME view).
+
+## 26.11.9.77
+
+### Changed
+
+- Lock screen: with fingerprint / Touch ID / Windows Hello unlock enabled, the
+  biometric prompt opens on the lock screen. Sign in with password and unlock
+  with security key remain available.
+
+### Added
+
+- GitLab release: `termiport-license` builds for Windows (`-windows-x64.exe`) and
+  Linux (`-linux-x64`) next to the existing macOS tools. Not published to GitHub.
+
+## 26.11.9.76
+
+### Fixed
+
+- Windows: Check for Updates no longer dies with “Windows cannot find \\”. The
+  updater used `cmd start` with a quoted title; escaped quotes collapsed to
+  `\\`, so the delay script never ran. It now runs the script directly as a
+  detached `cmd /C` process.
+- Updates: the automatic “update available” prompt also appears on the lock
+  screen — checking does not need the vault unlocked.
+
 ## 26.11.9.75
 
 ### Fixed
