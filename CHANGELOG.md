@@ -6,6 +6,18 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.10.79
+
+### Fixed
+
+- Lock screen: Touch ID / fingerprint auto-prompt no longer depends on Tauri
+  window focus (isFocused() often stayed false at startup and cancelled the
+  timer). It opens on its own with a short retry/backoff.
+- Android: ExtraKeys (Esc, Tab, Ctrl, arrows) work again while Gboard is open.
+  The native IME overlay was full-screen and disabled WebView focus, so the bar
+  never received taps. It is a 1×1 view again; sticky Ctrl also applies to the
+  next soft-keyboard character (Ctrl then c → ^C).
+
 ## 26.11.9.78
 
 ### Fixed
