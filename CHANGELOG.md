@@ -6,6 +6,30 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.10.80
+
+### Fixed
+
+- Lock screen: the Touch ID / fingerprint sheet opens on its own. The automatic
+  call was skipped because `autoBioAt` and `epoch` both started at 0, so the
+  effect bailed out forever when the lock screen mounted already locked (the
+  Unlock button bypasses that path). The desktop and Android webviews also keep
+  reporting the page as hidden while the window is on screen; a system cancel
+  before the sheet can appear is retried instead of being counted as the user
+  dismissing it.
+- Session ended bar: Enter reconnects and Escape closes the tab. Close was the
+  first focused button after a clean or coded exit, so Enter closed the tab;
+  Reconnect is focused first, and the keys are bound explicitly. Auto-reconnect
+  still follows the host’s Reconnect pause after a drop or a peer close.
+- Android: ExtraKeys move above the soft keyboard instead of sitting under it.
+  The app listens for IME window insets and pads the phone layout so Esc/Ctrl/Tab
+  stay tappable while Gboard is open.
+- Lock screen: Touch ID / fingerprint auto-prompt runs only when the app opens
+  already locked. After you unlock once, Lock (or idle lock) shows the button
+  without raising the system sheet, so locking does not immediately undo itself.
+- Lock screen: the password fallback link says “Unlock with password” instead of
+  “Sign in with password”.
+
 ## 26.11.10.79
 
 ### Fixed
