@@ -6,6 +6,40 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.11.11.85
+
+### Исправлено
+
+- SSH: старое железо (Cisco IOS и аналоги) больше не обрывает соединение на
+  обмене ключами — для DH GEX размеры групп как у OpenSSH (2048/4096/8192),
+  фиксированные `diffie-hellman-group14-sha1` / `group1-sha1` предлагаются
+  раньше GEX.
+- SSH: RSA-ключи входят через устаревший `ssh-rsa`, если у сервера нет
+  `server-sig-algs` или он объявляет только `ssh-rsa`. В порядке host key в
+  конце также `ssh-dss`; для известного RSA-ключа хоста `ssh-rsa` идёт после
+  `rsa-sha2-*`.
+- Android ExtraKeys: sticky Ctrl/Alt переводят буквы ЙЦУКЕН в QWERTY (Ctrl
+  затем «с» → ^C). Одиночный DEL от Samsung при сбросе composing после этой
+  буквы игнорируется, чтобы за прерыванием не шёл backspace.
+- Android ExtraKeys: sticky Ctrl и буква с Gboard больше не вводят обычный
+  символ без Ctrl. Soft input остаётся на native IME (stdin xterm выключен;
+  без `term.focus()` на Android), `onData` тоже через sticky-map, доставка IME
+  один раз (не plugin event + `evaluateJavascript`).
+- Android: ExtraKeys только над живым подключённым терминалом (не Hosts /
+  ended) и прячутся под Settings/drawer; z-index полоски ниже модалок, чтобы
+  Settings не уходил под ExtraKeys.
+- Android PhoneDrawer: Sync/Settings над системной навигацией (pinned footer +
+  `--android-inset-bottom`, как в 3X-UI-Manager / currency-bot); свайп влево
+  закрывает меню. Если WindowInsets дают bottom=0 — fallback
+  `navigation_bar_height`.
+
+### Изменено
+
+- SSH: после современных алгоритмов клиент предлагает весь устаревший набор,
+  который ещё умеет russh (NIST ECDH, KEX на SHA-1, CBC/3DES, HMAC-SHA1,
+  `ssh-rsa` / `ssh-dss`), чтобы старое сетевое оборудование подключалось без
+  отдельного профиля.
+
 ## 26.11.11.84
 
 ### Добавлено
