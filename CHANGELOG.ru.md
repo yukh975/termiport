@@ -6,6 +6,30 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.11.11.82
+
+### Изменено
+
+- Android ExtraKeys: крупнее, одна полоса с горизонтальным скроллом (без More/Back).
+  Вместо подписи «KB» — значок клавиатуры.
+
+### Исправлено
+
+- Android: ExtraKeys в fixed-полоске над Gboard (`bottom: --android-ime` из
+  WindowInsets + visualViewport + JS-мост). Esc/Ctrl/Tab больше не открывают
+  клавиатуру (только значок); после тапа IME переподключается без
+  `showSoftInput`, sticky Ctrl+буква (Ctrl+C) работает и полоска остаётся видимой.
+- Android-раскладушки (Huawei Mate и похожие): после раскрытия остаётся phone UI
+  и верхний отступ по native status bar. Раньше ширина >600 CSS px включала
+  desktop tab bar при `safe-area-inset-top = 0` — меню залезало под шторку и часы.
+
+## 26.11.11.81
+
+### Изменено
+
+- Android ExtraKeys: крупнее, горизонтальный скролл, значок клавиатуры (далее —
+  правки ExtraKeys/IME в 26.11.11.82).
+
 ## 26.11.10.80
 
 ### Исправлено
