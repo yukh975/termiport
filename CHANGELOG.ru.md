@@ -6,6 +6,15 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.11.11.86
+
+### Исправлено
+
+- Android ExtraKeys: sticky Ctrl и буква с Gboard снова дают управляющий
+  символ, а не обычную букву. `finishComposingText` больше не сбрасывает
+  composing до `commitText` (повторная отправка съедала sticky); после тапа
+  ExtraKeys WebView blur + возврат фокуса на native IME.
+
 ## 26.11.11.85
 
 ### Исправлено
