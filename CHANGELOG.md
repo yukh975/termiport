@@ -6,6 +6,38 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.11.85
+
+### Fixed
+
+- SSH: old appliances (Cisco IOS and similar) no longer drop during key
+  exchange — DH GEX uses OpenSSH-like 2048/4096/8192 group sizes, and fixed
+  `diffie-hellman-group14-sha1` / `group1-sha1` are preferred ahead of GEX.
+- SSH: RSA keys authenticate with legacy `ssh-rsa` when the server has no
+  `server-sig-algs` extension or only advertises `ssh-rsa`. Host-key order
+  also offers `ssh-dss` last; pinned RSA known-hosts prefer `ssh-rsa` after
+  `rsa-sha2-*`.
+- Android ExtraKeys: sticky Ctrl/Alt map ЙЦУКЕН letters to QWERTY (Ctrl then
+  Cyrillic «с» → ^C). A single DEL that Samsung sends when clearing composing
+  after that letter is ignored so the interrupt is not followed by backspace.
+- Android ExtraKeys: sticky Ctrl then a letter from Gboard no longer types a
+  plain character. Soft input stays on the native IME view (xterm stdin off;
+  no `term.focus()` on Android), `onData` still runs through the sticky map,
+  and IME text is delivered once (not plugin event + `evaluateJavascript`).
+- Android: ExtraKeys only show over a live connected terminal (not Hosts /
+  ended sessions) and hide under Settings/drawer; bar z-index stays below
+  modals so Settings is not covered.
+- Android PhoneDrawer: Sync/Settings stay above the system navigation bar
+  (pinned footer + `--android-inset-bottom`, same pattern as 3X-UI-Manager /
+  currency-bot); swipe left closes the drawer. Native bottom inset falls
+  back to `navigation_bar_height` when WindowInsets report 0.
+
+### Changed
+
+- SSH: after modern algorithms, the client offers the full legacy set russh
+  still implements (NIST ECDH, SHA-1 KEX, CBC/3DES, HMAC-SHA1, `ssh-rsa` /
+  `ssh-dss`) so older network gear can connect without a special profile.
+
 ## 26.11.11.84
 
 ### Added
