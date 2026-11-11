@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.11.86
+
+### Fixed
+
+- Android ExtraKeys: sticky Ctrl then a Gboard letter no longer types a plain
+  character. `finishComposingText` no longer clears the composing buffer before
+  `commitText` (that re-emitted the letter after sticky was consumed); ExtraKeys
+  blurs the WebView and re-focuses the native IME host after each bar tap.
+
 ## 26.11.11.85
 
 ### Fixed
