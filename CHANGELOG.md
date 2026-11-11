@@ -6,6 +6,39 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.11.84
+
+### Added
+
+- Hosts: right-click **Connect via Jump Host…** opens a searchable picker and
+  connects once through that jump host without changing the host’s saved jump
+  settings. Reconnect in the tab keeps the same override.
+- Host and group editors: adding a jump host uses a searchable host picker
+  instead of a plain drop-down.
+
+### Fixed
+
+- Android ExtraKeys: sticky Ctrl/Alt again apply to the next soft-keyboard
+  character (Ctrl then c → ^C). Modifier state lives in a shared module so the
+  IME path does not depend on the ExtraKeys component instance.
+
+### Changed
+
+- Android ExtraKeys: Enter is pinned on the right (like the keyboard icon on the
+  left); Esc/Ctrl/… scroll between them.
+
+## 26.11.11.83
+
+### Fixed
+
+- Android ExtraKeys: sit above the system navigation / gesture bar (not only
+  above Gboard). The keyboard icon is pinned first on the left and does not
+  scroll with the other keys.
+- Android foldables (Huawei Mate unfolded): TopBar and the hamburger menu stay
+  below the status bar. Insets are re-read from the decor root (plus cutout /
+  status_bar_height) on configuration change; the WebView’s consumed inset was
+  reporting top=0 after unfold, so ||| sat under the clock and could not be tapped.
+
 ## 26.11.11.82
 
 ### Changed
