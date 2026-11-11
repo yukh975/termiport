@@ -6,6 +6,32 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.11.82
+
+### Changed
+
+- Android ExtraKeys: larger keys in one horizontally scrolling row (no More/Back).
+  The soft-keyboard control is a keyboard icon instead of the “KB” label.
+
+### Fixed
+
+- Android: ExtraKeys sit in a fixed bar above Gboard (`bottom: --android-ime` from
+  WindowInsets + visualViewport + a JS bridge). Esc/Ctrl/Tab no longer open the
+  soft keyboard (only the keyboard icon does); after a bar tap the IME is
+  re-attached without `showSoftInput`, so sticky Ctrl then a letter (Ctrl+C) works
+  and the bar stays visible.
+- Android foldables (Huawei Mate and similar): keep the phone chrome after unfold
+  and pad the top with the native status-bar inset. Unfolding past 600 CSS px used
+  to switch to the desktop tab bar with `env(safe-area-inset-top)` still 0, so the
+  menu sat under the notification shade and clock.
+
+## 26.11.11.81
+
+### Changed
+
+- Android ExtraKeys: larger keys, horizontal scroll, keyboard icon (superseded by
+  the 26.11.11.82 ExtraKeys layout/IME fixes).
+
 ## 26.11.10.80
 
 ### Fixed
