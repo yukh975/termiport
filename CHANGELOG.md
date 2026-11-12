@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.12.87
+
+### Changed
+
+- Android: ExtraKeys is now a built-in on-screen keyboard (English QWERTY by
+  default, plus a 123 layer). The KB button toggles the letter pad; sticky
+  Ctrl/Alt apply to the next pad key. System IME / Gboard is no longer opened
+  for the terminal (layout import from the phone comes later).
+
 ## 26.11.11.86
 
 ### Fixed
