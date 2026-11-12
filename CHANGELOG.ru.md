@@ -6,6 +6,23 @@
 
 🇬🇧 [English version](CHANGELOG.md)
 
+## 26.11.12.88
+
+### Исправлено
+
+- Windows: «Проверить обновления» больше не вспыхивает окно cmd с
+  `ping 127.0.0.1` на паузе перед заменой exe — задержка в скрытом
+  PowerShell.
+- Android ExtraKeys: Enter на буквенной панели справа от M (не второй
+  Backspace); Backspace только у Space. Из верхней полоски убраны Enter и
+  дубли `|` `/` `-` `~` `` ` `` (символы на слое 123). В свёрнутом виде —
+  только кнопка KB; Esc/Ctrl/стрелки появляются вместе с панелью.
+- Android TopBar: заголовок Hosts / имя сессии по центру трёх полосок меню.
+- Android ExtraKeys: переключение EN/RU только по языкам включённых клавиатур
+  телефона (IME subtypes ∩ встроенные pads); EN всегда есть.
+- Android: одна ExtraKeys везде (терминал, Settings, Lock, поля); системная
+  soft keyboard не используется (`adjustNothing`, `inputmode=none`).
+
 ## 26.11.12.87
 
 ### Изменено
