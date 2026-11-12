@@ -6,6 +6,23 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.12.88
+
+### Fixed
+
+- Windows: Check for Updates no longer flashes a console window with
+  `ping 127.0.0.1` while waiting to replace the running exe — delay runs in a
+  hidden PowerShell process instead.
+- Android ExtraKeys: Enter is on the letter pad (right of M), not a second
+  Backspace; Backspace stays next to Space. Dropped Enter and duplicated
+  `|` `/` `-` `~` `` ` `` from the top mods row (symbols live on the 123 layer).
+  Collapsed bar shows only the KB button; Esc/Ctrl/arrows appear with the pad.
+- Android TopBar: Hosts / session title vertically centers with the hamburger.
+- Android ExtraKeys: layout switch (EN/RU) only for languages enabled on the
+  phone’s keyboards (IME subtypes ∩ built-in pads); EN always available.
+- Android: one ExtraKeys keyboard everywhere (terminal, Settings, Lock, forms);
+  system soft keyboard is not used (`adjustNothing`, `inputmode=none`).
+
 ## 26.11.12.87
 
 ### Changed
