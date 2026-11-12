@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.12.90
+
+### Fixed
+
+- Android: ExtraKeys no longer covers About TermiPort in the side menu (hidden
+  while the drawer / tab switcher / action sheet is open).
+- Android: outside the terminal, ExtraKeys opens by tapping an input field (no
+  floating KB icon). The KB toggle remains only over a live terminal session.
+
 ## 26.11.12.88
 
 ### Fixed
