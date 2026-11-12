@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.12.91
+
+### Fixed
+
+- Windows: Check for Updates no longer flashes a console window. The delayed
+  silent NSIS launch uses `wscript` + VBScript (`Run …, 0`) instead of
+  `powershell.exe` or `.cmd`/`ping` (both could still show a console on some
+  Windows builds).
+
 ## 26.11.12.90
 
 ### Fixed
