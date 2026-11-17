@@ -6,6 +6,21 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.17.92
+
+### Changed
+
+- Linux: the desktop package is now `termiport` instead of `termi-port`; the
+  sync server package remains `termiport-server`. The new package declares the
+  old name so installing it replaces `termi-port`, and the displayed name
+  stays TermiPort.
+
+### Added
+
+- Keys: Copy Private Key (button and context menu) for file keys. The OpenSSH
+  private key is copied as stored, so a key with a passphrase stays encrypted.
+  Secure Enclave and security keys have no exportable private key.
+
 ## 26.11.12.91
 
 ### Fixed
