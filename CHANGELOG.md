@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.17.93
+
+### Fixed
+
+- Phone: Keys rows are readable again — the label and fingerprint no longer
+  collapse into a one-character column next to the action buttons. On phone
+  the row actions (Copy Public Key, Copy Private Key, Show/Restore) are
+  icon-only buttons below the key info; desktop keeps the text buttons.
+
 ## 26.11.17.92
 
 ### Changed
