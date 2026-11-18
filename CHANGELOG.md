@@ -6,6 +6,15 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.18.94
+
+### Fixed
+
+- Settings ▸ Sync: the Done button no longer floats over the pane's buttons.
+  On desktop it sits on the account row next to Delete Account, right-aligned;
+  on narrow phone screens it wraps to the right edge without overlapping
+  anything. Other Settings sections keep Done at the bottom right.
+
 ## 26.11.17.93
 
 ### Fixed
