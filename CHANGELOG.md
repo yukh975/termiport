@@ -6,6 +6,25 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.19.95
+
+### Fixed
+
+- Phone: the Settings ▸ Sync account buttons (Sign Out, Delete Account, Done)
+  no longer overlap on narrow screens. They keep their natural width and wrap
+  onto extra lines instead of being squeezed into equal thirds.
+- Phone: opening the menu no longer draws a focus outline around the top
+  Terminal item; the drawer focuses its container, so Terminal looks like the
+  other menu items.
+- Settings: the dialog is wider on desktop, and the scrollbar is pinned to the
+  right edge with a gutter so it no longer sits on top of the buttons.
+
+### Changed
+
+- Phone: shorter button labels where the heading already gives context — Add
+  instead of Add Security Key… and Add Backup Key…, Sign Out instead of Sign
+  Out on This Device. Screen-reader names stay fully descriptive.
+
 ## 26.11.18.94
 
 ### Fixed
