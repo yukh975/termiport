@@ -6,6 +6,23 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.20.98
+
+### Changed
+
+- Reverted the Material 3 redesign that shipped in 26.11.19.96. Every platform
+  is back on the compact native layout of 26.11.18.94: 13 px system text,
+  26 px fields, 6 px radii, and colours taken from the terminal theme.
+- Phone: the slide-out drawer, the top tab strip and the compact lists are
+  back. The overflow menu and the four-tab bottom navigation are removed.
+- Removed the Material Symbols icon set (`M3Icon.svelte`, `m3icons.ts`); the
+  app uses the same text glyphs and small icons as 26.11.18.94.
+
+### Fixed
+
+- Android no longer uses the Material 3 palette, 56 px list rows, pill buttons
+  or full-screen Material dialogs and settings sheets.
+
 ## 26.11.20.97
 
 ### Changed
