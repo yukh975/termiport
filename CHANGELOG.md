@@ -6,6 +6,14 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.20.99
+
+### Fixed
+
+- Settings ▸ Keyboard: the shortcut list scrollbar now sits at the dialog edge,
+  clear of the Reset buttons, as in the other Settings tabs. The pane had its
+  own scroll container with a 6 px inset, so it bypassed the shared right gutter.
+
 ## 26.11.20.98
 
 ### Changed
