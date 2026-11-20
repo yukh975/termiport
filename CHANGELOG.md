@@ -6,6 +6,21 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.20.97
+
+### Changed
+
+- Desktop: the compact native layout is back. Windows and dialogs keep the
+  13 px system font, 26 px inputs, 6 px radii and small round-cornered list
+  icons, and the chrome again follows the terminal theme's colours instead of
+  the Material palette. Material 3 stays on phones, where it was introduced.
+
+### Fixed
+
+- Desktop: sidebar labels no longer truncate (Known Hosts), list rows are
+  compact again, and dialogs, Settings, the lock screen, the file table and
+  the terminal overlays no longer look like a tablet app.
+
 ## 26.11.19.96
 
 ### Changed
