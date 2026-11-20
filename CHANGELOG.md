@@ -6,6 +6,30 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.19.96
+
+### Changed
+
+- Material 3 design across the app: colour roles, surfaces, typography,
+  dialogs, list rows and icon buttons, in light and dark themes.
+- Phone: the slide-out drawer is replaced by an overflow menu and a four-tab
+  bottom navigation (Hosts, Terminal, Keys, SFTP). Menu actions are grouped
+  and the menu scrolls inside the safe area, so the items below Known Hosts
+  stay reachable.
+- Material Symbols icons replace text glyphs on toolbars and dialogs; phone
+  touch targets are at least 48 px.
+- Settings on phones is a section list with a back button and a pinned Done
+  button.
+
+### Fixed
+
+- Phone: pages, dialogs, sheets and the extra-key row no longer draw under the
+  Android status bar, navigation bar or the bottom navigation.
+- Phone: the host, group and serial editors open as a full-screen sheet and
+  clear the system bars instead of showing a narrow side panel.
+- Phone: the SFTP file table hides permissions and modification time before
+  its columns can overflow a 360 px screen.
+
 ## 26.11.19.95
 
 ### Fixed
