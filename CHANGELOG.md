@@ -6,6 +6,20 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.22.101
+
+### Fixed
+
+- The mouse wheel scrolls terminal output history when available. With no
+  scrollback, it no longer sends up and down arrow keys to the shell.
+
+## 26.11.22.100
+
+### Fixed
+
+- Android: New Host and other commands from the phone menu now run when tapped.
+  Menu rows keep their height when the action list scrolls.
+
 ## 26.11.20.99
 
 ### Fixed
