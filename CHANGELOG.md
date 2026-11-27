@@ -6,6 +6,17 @@ All notable changes to TermiPort, newest first. Format based on
 
 🇷🇺 [Версия на русском](CHANGELOG.ru.md)
 
+## 26.11.27.102
+
+### Added
+
+- SSH Client settings for connection, handshake, request and SFTP timeouts, and
+  global `ServerAliveInterval` and `ServerAliveCountMax` settings.
+
+### Fixed
+
+- Terminals send Tab and Shift+Tab even when the webview omits the legacy key code.
+
 ## 26.11.22.101
 
 ### Fixed
